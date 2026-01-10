@@ -22,7 +22,6 @@ def get_train_arrivals(map_id):
         response = requests.get(CTA_TRAIN_URL, params=params)
         response.raise_for_status()
         json = response.json()
-        print(json)
         for train in json.get('ctatt').get('eta'):
             print_train_arrival(train)
 
