@@ -15,15 +15,10 @@ params = {'key': cta_train_api_key, 'mapid': map_id}
 
 try:
     response = requests.get(cta_train_url, params=params)
-
     response.raise_for_status()
-
     xml_data = response.content
-
     print(xml_data)
-
     root = ET.fromstring(xml_data)
-
     print(f"Root tag: {root.tag}")
 
 
